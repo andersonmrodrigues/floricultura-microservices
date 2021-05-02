@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "157a550d-2830-4458-855c-71634ca14655",
+		"name": "Floricultura",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Loja",
+			"item": [
+				{
+					"name": "Compra",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"itens\": [\r\n        {\r\n            \"id\": 1,\r\n            \"quantidade\": 5\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"quantidade\": 1\r\n        }\r\n    ],\r\n    \"endereco\": {\r\n        \"rua\": \"Rua Dona Leopoldina\",\r\n        \"numero\": \"440\",\r\n        \"estado\": \"RS\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/compra",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"compra"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Fornecedor",
+			"item": [
+				{
+					"name": "Info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/info/RS",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"info",
+								"RS"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Produto",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Pedido",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Eureka",
+			"item": [
+				{
+					"name": "apps",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8761/eureka/apps",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8761",
+							"path": [
+								"eureka",
+								"apps"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Config Server",
+			"item": [
+				{
+					"name": "fornecedor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/fornecedor/default",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"fornecedor",
+								"default"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,6 +1,7 @@
 package br.com.desenv.microservice.loja.controller;
 
 import br.com.desenv.microservice.loja.dto.CompraDto;
+import br.com.desenv.microservice.loja.model.Compra;
 import br.com.desenv.microservice.loja.service.CompraService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,8 +18,8 @@ public class CompraController {
     private CompraService compraService;
 
     @PostMapping("")
-    public ResponseEntity<?> realizaCompra(@RequestBody CompraDto dto) {
-        compraService.realizaCompra(dto);
-        return ResponseEntity.ok().build();
+    public ResponseEntity<Compra> realizaCompra(@RequestBody CompraDto dto) {
+        Compra compra = compraService.realizaCompra(dto);
+        return ResponseEntity.ok(compra);
     }
 }
