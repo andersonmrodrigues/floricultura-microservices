@@ -6,5 +6,5 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/andersonmrodrigues/floricultura-microservices/tree/main/repo
+          uri: https://github.com/andersonmrodrigues/floricultura-microservices
           search-paths: fornecedor
