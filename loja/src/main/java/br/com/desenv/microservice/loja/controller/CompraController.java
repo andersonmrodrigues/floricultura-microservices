@@ -5,10 +5,7 @@ import br.com.desenv.microservice.loja.model.Compra;
 import br.com.desenv.microservice.loja.service.CompraService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/compra")
@@ -21,5 +18,10 @@ public class CompraController {
     public ResponseEntity<Compra> realizaCompra(@RequestBody CompraDto dto) {
         Compra compra = compraService.realizaCompra(dto);
         return ResponseEntity.ok(compra);
+    }
+
+    @GetMapping("/{id}")
+    public Compra getByid(@PathVariable("id") Long id) {
+        return compraService.getById(id);
     }
 }

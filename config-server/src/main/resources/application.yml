@@ -7,4 +7,4 @@ spring:
       server:
         git:
           uri: https://github.com/andersonmrodrigues/floricultura-microservices
-          search-paths: fornecedor
+          search-paths: fornecedor, loja, transportador
