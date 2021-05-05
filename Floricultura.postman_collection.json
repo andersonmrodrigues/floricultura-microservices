@@ -36,6 +36,26 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Compra",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/compra/40",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"compra",
+								"40"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -65,18 +85,41 @@
 				{
 					"name": "Produto",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "http://localhost:8081/info/RS",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"info",
+								"RS"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Pedido",
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "localhost:8081/pedido",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"pedido"
+							]
+						}
 					},
 					"response": []
 				}
@@ -125,6 +168,174 @@
 							"path": [
 								"fornecedor",
 								"default"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Zuul",
+			"item": [
+				{
+					"name": "Routes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5555/actuator/routes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"actuator",
+								"routes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fornecedor Info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5555/fornecedor/info/RS",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"fornecedor",
+								"info",
+								"RS"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fornecedor Pedido",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5555/fornecedor/pedido",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"fornecedor",
+								"pedido"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Auth",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "lojapwd",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "loja",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "scope",
+									"value": "web",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "joao",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "joaopwd",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8088/oauth/token",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8088/user",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"user"
 							]
 						}
 					},
