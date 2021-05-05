@@ -2,7 +2,7 @@
 
 - Feito durante o curso Microservices com Spring Cloud: Registry, Config Server e Distributed Tracing
 
-- Stack
+# Stack
 * Eureka
 * Spring Feign
 * Ribbon
@@ -12,7 +12,7 @@
 * Hystrix
 * Zuul
 
-- Planos Futuros
+# Planos Futuros
 * Zuul -> Spring Cloud Gateway
 * Hystrix -> Resilience4j
 * Ribbon -> Spring Cloud Loadbalancer
